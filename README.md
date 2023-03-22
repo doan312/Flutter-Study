@@ -1,7 +1,7 @@
 
 <br/>
 <p align="middle" >
-  <img width="300px;" src="https://user-images.githubusercontent.com/92977647/217286805-fa3ec5e0-fc40-4602-ac84-7a80cbc3feac.png"/>
+  <img width="300px;" src="https://user-images.githubusercontent.com/92977647/152990322-3746ab69-4796-4ed9-b747-45db6c510263.png"/>
 </p>
 <h2 align="middle">Dart 언어 기초와 Flutter 기초를 배우고 웹툰앱 까지 만들어보는 클론코딩을 수행하는 스터디입니다. (1회차) </h2>
 <p align="middle">
