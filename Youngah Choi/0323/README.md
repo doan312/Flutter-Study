@@ -101,7 +101,8 @@ void main() {
 ```
 * nico가 String과 null 둘 다 가능하다는 것을 Dart가 알기에 에러가 사라진다.
 
-```void main() {
+```
+void main() {
     String? nice = 'nico';
     nico = null;
     nico.length;  // nico가 null일 수도 있다고 알려준다. 그래서 length라는 값 사용 전에 확인한다.
