@@ -14,7 +14,7 @@
  ```
  * main함수 및 세미콜론 필수!
 
-####dart의 특성 (강의내용과는 별개)
+#### dart의 특성 (강의내용과는 별개)
 * OOP(Object Oriented Programming)언어
   
 * Interface를 가진 단일 상속되는 Class를 가진 언어
@@ -28,7 +28,7 @@
 | 2023/3/23 | dart의 자료형  |   ------        | https://dart.dev/ |   |
 
 
-####var
+#### var
 * dart에서는 변수를 var 키워드 또는 명시적 타입을 사용해 만든다.
 ```dart
 void main(){
@@ -40,7 +40,7 @@ void main(){
 ```
 *  다른 타입 변수는  서로 대입할 수 없다.
 * 보통함수나 메소드 내부에 지역변수를 지정할 때는 var를 사용하고class에서 변수나 프로퍼티를 선언할 때는 명시적 타입을 사용한다.
-####dynamic
+#### dynamic
 * 만약 변수를 선언할 때 아무런 값을 지정하지 않거나, 타입을 선언하지 않으면 자동적으로 dynamic 타입을 가진다.
 ```dart
 dynamic name;
@@ -50,7 +50,7 @@ void main(){
 	var name; // <--- dynamic 타입을 가진다.
 }
 ```
-####Nullable
+#### Nullable
 * null safety는 개발자가 null 값을 참조할 수 없게 하는 것이다.
 ```dart
 bool isEmpty(String string) => string.length == 0;
