@@ -68,7 +68,7 @@ void main() {
 <br>
 
 ### const
-* const : 컴파일할 때 값을 알고 있는 변수를 만드는 방법으로, 컴파일할 때 알고 있는 값에 사용한다. 그 예로 *max_allowed_price* 등 앱스토어에 앱을 올리기 전에 알고 있는 값에 사용한다.
+* **const** : 컴파일할 때 값을 알고 있는 변수를 만드는 방법으로, 컴파일할 때 알고 있는 값에 사용한다. 그 예로 *max_allowed_price* 등 앱스토어에 앱을 올리기 전에 알고 있는 값에 사용한다.
 
 * **Dart에서 const** : compile-time constant를 생성
 
