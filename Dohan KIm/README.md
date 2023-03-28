@@ -351,3 +351,87 @@ void main() {
 }
 ```
 * 위 코드는 a + b 표현식을 문자열 내에 삽입하여 "a + b = 30"라는 문자열을 출력합니다. ${}를 사용하여 표현식을 문자열 내에 삽입할 수 있습니다.
+
+###  2023년 3월 27일 플러터 스터디 공부 
+| 날짜       | 제목               | 설명                                | 링크                                                                             |
+| ---------- | ------------------ | ----------------------------------- | -------------------------------------------------------------------------------- |
+| 2023/3/27 | maps,sets  | ------         | https://dart.dev/ |   |
+
+
+
+* List : 데이터의 순서가 있고 중복을 허용함(배열, Array)
+* Set : 데이터의 순서가 없고 중복을 허용하지 않음
+* Map : 키(Key)와 값(Value)로 구성된 클래스로서 키는 중복을 허용하지 않고 값은 중복을 허용함
+
+### Map
+#### map이란 js에 object, python에 dictionary와 같다.
+```dart
+void main(){
+	var player = {
+    	"name":"jisoung",
+        "age": 17,
+        "isLoveFlutter": true,
+   };
+}
+```
+* 다음과 같은 코드가 있을 때 우리는 var로 선언한 변수의 타입을 지정해야 한다.
+그러면 어떻게 타입을 지정해 줄 수 있을까? Map을 사용하면 손쉽게 지정해 줄 수 있다.
+
+```dart
+void main(){ 
+	Map<string, dynamic> player = {
+    	"name":"jisoung",
+        "age": 17,
+        "isLoveFlutter": true,
+   };
+}
+```
+* Map안에 List를 넣어줄 수도 있다.
+```dart
+void main(){
+	Map<List<int>, bool> player = {
+    	[1,2,3,4,5]: true,
+        [6,7,8,9,10]: false,
+   };
+}
+```
+### sets
+#### sets란 List와 비슷한 개념이지만 한가지 차이가 있다.
+바로 모든 아이템은 유니크하다는 것이다.
+```dart
+void main(){
+	Set<int> setNumbers = {1,2,3,4,5};
+   	List<int> listNumbers = [1,2,3,4,5];
+	setNumbers.add(1);
+    listNumbers.add(1);
+    print(setNumbers);
+    print(listNumbers);
+}
+```
+* 결과는 다음과 같다.
+```dart
+{1, 2, 3, 4, 5}
+[1, 2, 3, 4, 5, 1]
+```
+* dart에서 List는 python의 List와 같고
+dart에 Set은 python의 tuple과 비슷하다.
+### Collection For
+* dart의 유용한 기능중 하나다.
+전에 Collection If와 같이 배열안에 For문을 넣을 수 있는 기능이다.
+대표적으로 UI를 만들 때 유용하게 사용된다.
+예제를 보자.
+```dart
+void main(){
+	var persons = ['chanhong', 'hyeonseok', 'jisoung'];
+    var newPerson = [
+    	'person: nico',
+        'person: lynn',
+        for(var person in persons) "person: $person"
+    ];
+    print(newPerson);
+}
+```
+* 결과는 다음과 같다.
+```dart
+[person: nico, person: lynn, person: chanhong, person: hyeonseok, person: jisoung]
+```
