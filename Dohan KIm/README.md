@@ -435,3 +435,136 @@ void main(){
 ```dart
 [person: nico, person: lynn, person: chanhong, person: hyeonseok, person: jisoung]
 ```
+
+###  2023년 3월 28일 플러터 스터디 공부 
+| 날짜       | 제목               | 설명                                | 링크                                                                             |
+| ---------- | ------------------ | ----------------------------------- | -------------------------------------------------------------------------------- |
+| 2023/3/27 |  naemd, optional,QQ | ------         | https://dart.dev/ |   |
+
+### Define Function
+```dart
+첫 번째 케이스
+(반환 자료형) 함수이름(파라미터){}
+
+두 번째 케이스
+(반환 자료형) 함수이름(파라미터) => {}
+```
+```dart
+// 첫 번째 케이스
+String sayHello(String name) {
+	return "Hello $name";
+}
+
+void main(){
+	print(sayHello("nico"));
+}
+```
+```dart
+// 두 번째 케이스
+String sayHello(String name) => return "Hello $name";
+
+void main(){
+	print(sayHello("nico"));
+}
+```
+### Named Parameters
+```dart
+String sayHello(String name, int age, String country) => return "Hello $name, age: $age, country $country";
+
+void main(){
+	print(sayHello("nico", 17, "korea"));
+}
+```
+* 위 코em는 문제가 있다. 저 17이 무슨 의미를 하는지 korea가 무슨 의미를 하는지 알 수가 없다.
+이 문제를 해결하기 위해 dart에서는 named parameters를 지원한다.
+```dart
+String sayHello({
+	String name, 
+    int age, 
+    String country
+}) => return "Hello $name, age: $age, country $country";
+
+void main(){
+	print(sayHello{
+    	name: "nico",
+        age: 17,
+        country: "korea",
+    });
+}
+```
+* required을 사용하면 null safety를 적용할 수 있다.(required를 쓰면 값이 반드시 있어야 한다.)
+```dart
+String sayHello(
+	required String name, 
+    required int age, 
+    required String country
+) => return "Hello $name, age: $age, country $country";
+
+void main(){
+	print(sayHello{
+    	name: "",nico
+        age: 17,
+        country: "korea",
+     });
+}
+```
+### optional positional parameter
+* 파라미터에 optional을 설정하려면 ?을 타입 뒤에 붙이면 된다.
+* 인자를 보내지 않아도 기본 값을 가지게 하려면 다음과 같이 하면 된다.
+```dart
+String sayHello(
+	String name, 
+    int age, 
+    // default value
+    [String? country = "korea"],
+) => return "Hello $name, age: $age, country $country";
+
+void main(){
+	print(sayHello){
+    	name: "nico",
+        age: 17,
+        country: "korea",
+    };
+}
+```
+### QQ Operator
+#### QQ question operator
+```dart
+String upperName(String name) => name.toUpperCase();
+
+void main(){
+	upperName('nico');
+    upperName(null); // Error!
+}
+```
+* 위 코드는 인자 값이 null 인것을 허용하지 않는다.
+다음과 같이 고칠 수 있다.
+```dart
+String upperName(String? name){
+	if(name != null){
+    	return name.toUpperCase();
+    }
+    return 'NONE';
+}
+```
+* 위 코드를 더 짧게 만들 수 있다.
+```dart
+String upperName(String? name) => name != null name.toUpperCase() : "NONE";
+```
+* 하지만 dart에서는 위와 같은 코드를 더욱 짧게 할 수 있다
+```dart
+String upperName(String? name) => name?.toUpperCase() ?? "NONE";
+```
+* ??(QQ)의 뜻은 만약 왼쪽의 있는 값이 Null이라면 오른쪽 값을 return 시킨다는 것이다.
+쉽게 말해서 위 코드를 보면 name.toUpperCase()를 리턴할 것이다.
+그런데 만약 name이 null이여서 toUpperCase()를 실행할 수 없다면 "NONE"을 리턴하는 것이다.
+name에 ?(optional)을 붙인 이유는 name이 null일 수도 있기 때문이다.
+### QQ equal
+```dart
+void main(){
+	String? name;
+    // 만약 name이 null인 경우 할당한다.
+    name ??= 'nico';
+}
+```
+* QQ Operator는 flutter에서 자주 사용된다.
