@@ -460,10 +460,8 @@ void main(){
 }
 ```
 ```dart
-// 첫 번째 케이스
-String sayHello(String name) {
-	return "Hello $name";
-}
+// 두 번째 케이스
+String sayHello(String name) => return "Hello $name";
 
 void main(){
 	print(sayHello("nico"));
@@ -487,11 +485,11 @@ String sayHello({
 }) => return "Hello $name, age: $age, country $country";
 
 void main(){
-	print(sayHello){
+	print(sayHello{
     	name: "nico",
         age: 17,
         country: "korea",
-    };
+    });
 }
 ```
 * required을 사용하면 null safety를 적용할 수 있다.(required를 쓰면 값이 반드시 있어야 한다.)
@@ -503,11 +501,11 @@ String sayHello(
 ) => return "Hello $name, age: $age, country $country";
 
 void main(){
-	print(sayHello){
+	print(sayHello{
     	name: "",nico
         age: 17,
         country: "korea",
-    };
+     });
 }
 ```
 ### optional positional parameter
