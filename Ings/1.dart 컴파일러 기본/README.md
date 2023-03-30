@@ -38,6 +38,8 @@
 1. Dart Pad 를 사용함 -> https://www.dartpad.dev
 2. Visual Studio Code에 Dart, Flutter 확장 프로그램을 설치하여 진행 
 
+* * *
+
 
 
 
