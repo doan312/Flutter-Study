@@ -736,3 +736,77 @@ void main(){
   );
 }
 ```
+###  2023년 3월 30일 플러터 스터디 공부 
+| 날짜       | 제목               | 설명                                | 링크                                                                             |
+| ---------- | ------------------ | ----------------------------------- | -------------------------------------------------------------------------------- |
+| 2023/3/22 |   | -------          | https://dart.dev/ |   |
+### Cascade Notation
+```dart
+//생략
+void main(){
+	var jisoung = Player(name: "jisoung", age: 17, description: "Happy code is end coding");
+	jisoung.name = "nico";
+	jisoung = 20;
+	jisoung.description = "Best Project is End Project";
+}		
+```
+* 위를 보면 반복되는 부분이 있다. dart에서는 이걸 간단하게 ..으로 해결할 수 있다.
+```dart
+//생략
+void main(){
+	var jisoung = Player(name: "jisoung", age: 17, description: "Happy code is end coding");
+	...name = "nico"
+	..age = 20
+	..description = "Best Project is End Project";
+}		
+```
+* 각 '..'들은 jisoung을 가리킨다. 매우 유용한 operator이다.
+앞에 class가 있다면 그 클래스를 가리킨다.
+### enums
+* enum은 우리가 실수하지 않도록 도와주는 타입이다.
+* dart에서 enum type을 만드는 법은 다음과 같다.
+```dart
+enum Team {
+	red,
+	blue,
+}
+class Player {
+	String name;
+	int age;
+	Team team;
+	
+	Player({
+		required this.name,
+		required this.age,
+		required this.team,
+	});
+}
+
+void main(){
+	var jisoung = Player(name: "jisoung", age: 17, team: Team.red);
+	var sushi = jisoung
+		..name = "sushi"
+		..age = 12
+		..team = Team.blue;
+}
+```
+### Abstract(추상화)
+* 추상화 클래스는 다른 클래스들이 직접 구현 해야하는 메소드들을 모아놓은 일종의 청사진이라 보면 된다.
+* 추상 클래스에서는 기능을 구현하지 않는다.
+```dart
+abstract class Human {
+	void walk();
+}
+```
+* extends를 이용해 상속, 확장을 할 수 있다.
+```dart
+abstract class Human {
+	void walk();
+}
+class Player extends Human {
+	// 생략
+	void walk(){
+		print("working!");
+	}
+}
+```
